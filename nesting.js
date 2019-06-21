@@ -9,8 +9,7 @@
 ////////// PROBLEM 1 //////////
 
 // Do not edit the code below.
-var employees = [
-  {
+var employees = [{
     "firstName": "Von",
     "lastName": "Budibent",
     "email": "vbudibent0@163.com",
@@ -50,8 +49,17 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
-
+function employeeUpdater() {
+  for (i = 0; i < employees.length; i++) {
+    if (employees[i].firstName === "Theo") {
+      employees.splice(i, 1);
+    }
+    if (employees[i].firstName === "Lorie") {
+      employees[i].department = "HR";
+    }
+  }
+  return employees;
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -68,8 +76,15 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
-
+function removeDuplicates() {
+  for (let i = 0; i < workplaceAccidents.length; i++) {
+    if (workplaceAccidents.indexOf(workplaceAccidents[i], i + 1) > -1) {
+      workplaceAccidents.splice(i, 1);
+      i--;
+    }
+  }
+  return workplaceAccidents;
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -77,11 +92,10 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 // Do not edit the code below.
 var cat = {
   name: 'Fluffy',
-  catFriends: [
-    {
+  catFriends: [{
       name: 'Grumpy',
       activities: ['be grumpy', 'eat food']
-    }, 
+    },
     {
       name: 'Lazy Bones',
       activities: ['sleep', 'pre-sleep naps']
@@ -96,7 +110,8 @@ var cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-//Code Here
+grumpyActivity = cat.catFriends[0].activities[1];
+fluffy2ndFriend = cat.catFriends[1].name;
 var grumpyActivity;
 var fluffy2ndFriend;
 
@@ -109,8 +124,7 @@ var myCar = {
   make: 'Toyota',
   model: 'Corolla',
   year: 1992,
-  accidents: [
-    {
+  accidents: [{
       date: '3/15/93',
       damage: '$5,000',
       atFaultForAccident: true
@@ -138,14 +152,22 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner() {
+  for (i = 0; i < myCar.accidents.length; i++) {
+    myCar.accidents[i].atFaultForAccident = false;
+  }
+}
 
 
 
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
+var numsArr = [
+  [1, 2, 3, 4],
+  [5, 6],
+  [7, 8, 9, 10, 11]
+];
 // Do not edit the code above.
 
 /*
@@ -157,6 +179,15 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
     4. Return the modified numsArr.
 */
 
-//Code Here
-
-
+function looper() {
+  for (i = 0; i < numsArr.length; i++) {
+    for (j = 0; j < numsArr[i].length; j++) {
+      if (numsArr[i][j] % 2 === 0) {
+        numsArr[i][j] = 'even'
+      } else {
+        numsArr[i][j] = 'odd'
+      }
+    }
+  }
+  return numsArr;
+}
